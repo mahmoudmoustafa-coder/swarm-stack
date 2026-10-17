@@ -27,7 +27,6 @@ It demonstrates service replication, port publishing, health checks, and basic c
 ```text
 swarm-stack/
 ├── compose.yaml
-├── .gitignore
 └── README.md
 ```
 
