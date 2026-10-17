@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "8082:80"
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "-o", "/dev/null", "http://localhost/"]
+      interval: 40s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+
+    deploy:
+      replicas: 3
+      restart_policy:
+        condition: on-failure
+
